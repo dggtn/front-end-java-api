@@ -46,3 +46,17 @@ const sectionsParaOcultar = document.querySelectorAll('.section'); // Adicione a
 categoriaSelect.addEventListener('change', async function handleMudancaCategoria() {
     const categoriaSelecionada = categoriaSelect.value;
 
+    if (categoriaSelecionada === 'todos') {
+        // recarga los datos originales
+        limpiarErrores();
+    } else {
+        limpiarErrores();
+        // Realizar una solicitud al punto final con la categoría seleccionada
+        try {
+            const data = await getDatos(`/series/categoria/${categoriaSelecionada}`);
+            crearListaPeliculas(categoria, data);
+        } catch (error) {
+            tratarErrores("Se produjo un error al cargar los datos de la categoría..");
+        }
+    }
+});
