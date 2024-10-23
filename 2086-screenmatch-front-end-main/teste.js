@@ -29,3 +29,20 @@ function crearListaPeliculas(elemento, dados) {
     ul.innerHTML = listaHTML;
     elemento.appendChild(ul);
 }
+// Función genérica para manejo de errores.
+function tratarErrores(mensajeError) {
+    console.error(mensajeError);
+}
+
+function limpiarErrores() {
+    for (const section of sectionsParaOcultar) {
+        section.classList.toggle('hidden')
+    }
+}
+
+const categoriaSelect = document.querySelector('[data-categorias]');
+const sectionsParaOcultar = document.querySelectorAll('.section'); // Adicione a classe CSS 'hide-when-filtered' a las seccione o títulos que desea ocultar.
+
+categoriaSelect.addEventListener('change', async function handleMudancaCategoria() {
+    const categoriaSelecionada = categoriaSelect.value;
+
