@@ -60,3 +60,18 @@ categoriaSelect.addEventListener('change', async function handleMudancaCategoria
         }
     }
 });
+// Array de URLs para las solicitudes
+gerarSeries();
+async function gerarSeries() {
+    const urls = ['/series/top5', '/series/lanzamientos', '/series'];
+
+    try {
+        // Hace todas las solicitudes en paralelo
+        const data = await Promise.all(urls.map(url => getDatos(url)));
+        crearListaPeliculas(elementos.top5, data[0]);
+        crearListaPeliculas(elementos.lanzamientos, data[1]);
+        crearListaPeliculas(elementos.series, data[2]);
+    } catch (error) {
+        tratarErrores("Se produjo un error al cargar los datos..");
+    }
+}
