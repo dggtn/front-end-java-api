@@ -1,4 +1,4 @@
-  <h1>Java API Conectando la Frontend</h1>
+  <h1>Java API Conectando al Frontend</h1>
   <p><strong>Descripción:</strong> Proyecto para integrar un frontend usando <strong>JavaScript</strong>, <strong>CSS</strong> y <strong>HTML</strong> con una API backend desarrollada en <strong>Java</strong>. Este proyecto es parte de una aplicación completa que combina tanto el frontend como el backend para crear una experiencia interactiva.</p>
 
   <h2>Descripción del Proyecto</h2>
